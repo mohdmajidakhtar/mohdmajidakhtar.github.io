@@ -318,8 +318,14 @@
           </div>
         </div>
       <!-- </center> -->
+      <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+              <p style="color: white">
+                <h3>Total Citation: <span id="citation"></span> </h3>  
+                Source: <a href="https://scholar.google.com/citations?user=s0S12tUAAAAJ&hl=en" style="color: white">Google Scholar</a>
+              </p>
     </section>
-
 
     <section id="extra_activity">
         <div class="container">
@@ -835,6 +841,36 @@
     <script src="vendor/bootstrap/bootstrap.min.js"></script>
     <script src="js/animate.js"></script>
     <script src="js/timeline.js"></script>
+    <script src="js/scholar.js"></script>
+
+    <script>
+        const url = "https://scholar.google.com/citations?user=s0S12tUAAAAJ&hl=en";
+
+        getCitation();
+
+async function getCitation() {
+  try {
+    const response = await axios.get(url);
+    const document = cheerio.load(response.data);
+    var cite = document("td.gsc_rsb_std").text()[0];
+    // console.log(citation);
+  } catch (error) {
+    console.error(error);
+  }
+  document.getElementById('citation').innerHTML=cite;
+
+}
+
+String.prototype.deleteWord = function (searchTerm) {
+    var str = this;
+    var n = str.search(searchTerm);
+    while (str.search(searchTerm) > -1) {
+        n = str.search(searchTerm);
+        str = str.substring(0, n) + str.substring(n + searchTerm.length, str.length);
+    }
+    return str;
+}
+        </script>
     
 </body>
 </html>
