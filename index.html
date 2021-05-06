@@ -50,7 +50,7 @@
   
   async function getCitation() {
     try {
-      const response = await axios.get(url);
+      // const response = await axios.get(url);
       const document = cheerio.load(response.data);
       var cite = document("td.gsc_rsb_std").text()[0];
       // console.log(citation);
