@@ -1,11 +1,8 @@
-Academic Portfolio
-=====================================
+# Introduction
+Hey all, I am Mohd Majid Akhtar, and this is my portfolio live.
 
-You can find the LIVE Website [here](https://nicolasmeseguer.github.io).
-
-This template has been made from scratch taking in consideration some details from Beautiful Jekyll templates.
-
-Reach me @ [n.mesegueriborra@um.es](mailto:n.mesegueriborra@um.es).
+## Find more
+Learn more about my projects at: https://github.com/mohdmajidakhtar
 
 License
 -------
