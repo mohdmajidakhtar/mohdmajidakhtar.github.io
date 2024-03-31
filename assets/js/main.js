@@ -6,6 +6,7 @@ $('#conferencesContent').hide();
 $('#projectsContent').hide();
 $('#tutorialsContent').hide();
 $('#academicContent').hide();
+$('#studentsContent').hide();
 $('#particularContent').hide();
 /* Template
 $('#nameContent').hide();
@@ -144,6 +145,23 @@ $(document).ready(function(){
 
 			// Show current content
 			activateDiv('#academicContent');
+		}
+	});
+
+	// Handle 'Students' content
+	$('#students').click(function(e) {
+
+		// If the div has already the class active, no need to reload the divs...
+		if(!$(e.target).hasClass('active')) {
+			// Update navbar
+			clearActiveLinks();
+			activateLink(e);
+
+			// Hide other contents
+			clearActiveDivs();
+
+			// Show current content
+			activateDiv('#studentsContent');
 		}
 	});
 
